@@ -1,0 +1,88 @@
+[{
+  "_id": {
+    "$oid": "6577037a31e9e08f12bf7d25"
+  },
+  "name": "MHA Afif",
+  "age": 23,
+  "gpa": 3.94,
+  "fullTime": false,
+  "uni": "UCSI"
+},
+{
+  "_id": {
+    "$oid": "657703af31e9e08f12bf7d26"
+  },
+  "name": "Fahim",
+  "age": 24,
+  "gpa": 3.42,
+  "fullTime": false,
+  "uni": "UCSI"
+},
+{
+  "_id": {
+    "$oid": "657709d631e9e08f12bf7d27"
+  },
+  "name": "Iftiaj",
+  "age": 25,
+  "gpa": 3.72,
+  "fullTime": false
+},
+{
+  "_id": {
+    "$oid": "657709d631e9e08f12bf7d28"
+  },
+  "name": "Rashed",
+  "age": 24,
+  "gpa": 3.43,
+  "fullTime": false
+},
+{
+  "_id": {
+    "$oid": "65770a979c6700d41cf12ffc"
+  },
+  "name": "Maisha",
+  "age": 23,
+  "gpa": 3.43,
+  "fullTime": false
+},
+{
+  "_id": {
+    "$oid": "65770ae39c6700d41cf12ffe"
+  },
+  "name": "Gaby",
+  "age": 23,
+  "gpa": 3.9,
+  "fullTime": true
+},
+{
+  "_id": {
+    "$oid": "65770ae39c6700d41cf12fff"
+  },
+  "gpa": 3.76,
+  "age": 23,
+  "name": "Bryan",
+  "fullTime": false
+},
+{
+  "_id": {
+    "$oid": "65770e7631e9e08f12bf7d29"
+  },
+  "name": "YuYe",
+  "age": 23,
+  "gpa": 3,
+  "fullTime": false,
+  "regiDate": {
+    "$date": "2023-12-11T13:28:22.960Z"
+  },
+  "gradDate": null,
+  "courses": [
+    "Bio",
+    "Che",
+    "Cal"
+  ],
+  "address": {
+    "street": "123 cheras",
+    "city": "KL",
+    "zip": 56000
+  }
+}]
