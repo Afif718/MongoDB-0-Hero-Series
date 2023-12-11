@@ -1,0 +1,84 @@
+
+MongoDB Basics
+
+1.	Document: A document is a group of field value pairs.
+
+Example: 
+{
+  name: “Afif,
+  age:23,
+  uni:”UCSI”
+}
+
+2.	Collection: A collection is a group of one or more documents
+
+3.	Database:  A database is a group of one or more collections
+
+4.	Mongosh Shell Commands 
+•	To start Mongosh shell type in cmd  mongosh
+•	To clear the Mongosh terminal type in cmd  cls
+•	To exit the mongosh shell type in cmd  exit
+
+5.	Database related commands
+•	Show the list of databases: show dbs
+•	To use a Database: use DB_Name
+•	To create a new DB: use NewDBName
+•	To add collections to the DB: db.createCollection(“students”)
+•	To drop/delete the current Database: db.dropDatabase()
+•	Insert document in DB: db.students.insertOne({name: “Afif”, age:23})
+•	To see the inserted: db.students.find()
+•	To insert many documents at a time inside a collection: db.students.insertMany([{}, {}, {}, {}])
+
+
+6.	DataTypes in MongoDB
+db.students.insertOne({name:”YuYe”, age:23, gpa:3.96, fullTime: false, regiDate: new Date(),  radate: null, courses: [“Bio”, “Che”, “Cal”], address: {street: “123 cheras”, city: “KL”, zip: 56000}})
+
+
+7.	Sort and Limit in MongoDB 
+•	db.students.find().sort({name:1}) 
+•	db.students.find().sort({name:-1)}
+•	db.students.find().sort({gpa:1})
+•	db.students.find().sort({gpa:-1})
+
+note: 1 for Alphabetical order & -1 for Reverse Alphabetical order.
+
+
+8.	Combine both Sort and Limit 
+•	Find highest 3 gpas - db.students.find().sort({gpa:-1}).limit(1)
+•	Find lowest gpa – db.students.find().sort({gpa: 1}).limit(1)
+
+
+9.	Find a document
+•	db.students.find({name:"Afif"})
+•	db.students.find({gpa:3.96})
+•	db.students.find({fullTime:false})
+•	db.students.find({gpa:3.96, fullTime:false})
+
+
+10.	More Find functions
+•	.find({query}, {projection})
+•	db.students.find({}, {gpa: true})  //it will show all the gpa with id
+•	db.students.find({gpa:3.96, fullTime:false})
+
+
+11.	Update Data 
+•	db.student.updateOne({name:"Afif"}, {$set:{age:24}})
+•	db.students.updateOne({_id: ObjectId('65770e7631e9e08f12bf7d29')}, {$set:{gpa:3.00}})
+•	db.students.updateMany({}, {$set:{fullTime:false}}) //it will update all the fullTIme field
+•	 AnyBody that doesn’t have fullTime field will be added using this db.students.updateMany({fullTime:{$exists:false}}, {$set:{fullTime:true}})
+
+
+12.	To remove a field inside a document
+•	db.students.updateOne({_id: ObjectId('65770ae39c6700d41cf12fff')}, {$unset:{age:""}})
+•	db.students.updateOne({name:"Gaby"}, {$unset:{fullTime:""}})
+
+
+13.	Delete
+•	db.students.deleteOne({name:"Gaby"})
+•	db.students.deleteMany({fullTime:false})
+•	It will delete the whole database because registerDate doesn’t exists anywhere db.students.deleteMany({registerDate:{exists:false}})
+
+14.	Comparison Operators
+15.	Logical Operators
+16.	Indexes
+17.	Collections
