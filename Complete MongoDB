@@ -78,7 +78,21 @@ note: 1 for Alphabetical order & -1 for Reverse Alphabetical order.
 •	db.students.deleteMany({fullTime:false})
 •	It will delete the whole database because registerDate doesn’t exists anywhere db.students.deleteMany({registerDate:{exists:false}})
 
+
 14.	Comparison Operators
-15.	Logical Operators
-16.	Indexes
-17.	Collections
+•	Show all the data except for one (Not equal Operator) db.students.find({name: {$ne:"Afif"}})
+•	It will show all the ages below 24 (less than)  db.students.find({age:{$lt:24}})
+•	Less than or equal to   db.students.find({age:{$lte:23}})
+•	Greater than  db.students.find({age:{$gt:24}})
+•	Greater than or equal to  db.students.find({age:{$gte:24}})
+•	Two operators (> <)  db.students.find({gpa:{$gte:3, $lte:3.5}})
+•	In Operator – returns one of the mentioned values  db.students.find({name:{$in:["Afif", "Gaby"]}})
+•	Not In Operator – return values excluding the mentioned values  db.students.find({name:{$nin:["Afif", "Gaby"]}})
+
+
+15.	Logical Operators: Logical Operators return data based on expressions that evaluate to true or false ($and, $not, $nor, $or)
+•	$and --> db.students.find({$and: [{fullTime: true},{age:{$lte:23}}]})
+•	$or --> db.students.find({$or: [{fullTime: true}, {age:{$lte:23}}]})
+•	$nor --> db.students.find({$nor: [{fullTime: true}, {age:{$lte:23}}]})
+•	$not --> db.students.find({age: {$not: {$gt:23}}})
+
